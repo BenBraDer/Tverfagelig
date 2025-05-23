@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hjemmeside - Benjamin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rainCanvas"></canvas>
+
+<div class="datetime" id="datetime"></div>
+
+<nav class="side-menu">
+  <ul>
+    <li><a href="index.html">Hjem</a></li>
+    <li><a href="fag1.html">Teknologiforståelse</a></li>
+    <li><a href="fag2.html">Programmering</a></li>
+    <li><a href="fag3.html">Medie</a></li>
+    <li><a href="fag4.html">Yrkesfag</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+</nav>
+
+<main class="content">
+  <h1>Teknologiforståelse</h1>
+  <p>Her er noen oppgaver jeg er spesielt fornøyd med i faget:</p>
+
+  <section class="project-grid">
+    <div class="project-card">
+      <img src="bilder/prosjekt1.jpg" alt="Prosjekt 1">
+      <h3>Oppgave 1</h3>
+      <p>Dette var en oppgave der vi lærte om teknologiens påvirkning på samfunnet. Jeg lagde en presentasjon jeg ble stolt av.</p>
+    </div>
+    <div class="project-card">
+      <img src="bilder/prosjekt2.jpg" alt="Prosjekt 2">
+      <h3>Oppgave 2</h3>
+      <p>Vi lagde et digitalt tankekart med viktige teknologiske begreper. Jeg brukte bilder, lenker og forklaringer.</p>
+    </div>
+    <div class="project-card">
+      <img src="bilder/prosjekt3.jpg" alt="Prosjekt 3">
+      <h3>Oppgave 3</h3>
+      <p>Jeg skrev en tekst om personvern og datasikkerhet, og lærte masse om hvordan vi blir overvåket på nett.</p>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+<script>
+function updateTime() {
+  const dt = new Date();
+  const dateStr = dt.toLocaleDateString('no-NO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const timeStr = dt.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  document.getElementById("datetime").innerHTML = `${dateStr} - ${timeStr}`;
+}
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+</body>
+</html>

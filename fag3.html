@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hjemmeside - Benjamin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="rainCanvas"></canvas>
+
+  <div class="datetime" id="datetime"></div>
+
+  <nav class="side-menu">
+    <ul>
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="fag1.html">Teknologiforståelse</a></li>
+      <li><a href="fag2.html">Programmering</a></li>
+      <li><a href="fag3.html">Medie</a></li>
+      <li><a href="fag4.html">Yrkesfag</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Medie</h1>
+    <p>Her er tre medieprosjekter jeg er stolt av:</p>
+
+    <section class="project-grid">
+      <div class="project-card">
+        <img src="bilder/medie1.jpg" alt="Medieprosjekt 1">
+        <h3>Fotoprosjekt</h3>
+        <p>Jeg tok bilder og redigerte dem i Photoshop. Jeg lærte om lys, komposisjon og fargetoner.</p>
+      </div>
+      <div class="project-card">
+        <img src="bilder/medie2.jpg" alt="Medieprosjekt 2">
+        <h3>Video & Klipp</h3>
+        <p>Vi laget en kortfilm i klassen. Jeg var med på å filme og klippe, og lærte mye om redigering i Premiere Pro.</p>
+      </div>
+      <div class="project-card">
+        <img src="bilder/medie3.jpg" alt="Medieprosjekt 3">
+        <h3>Plakatdesign</h3>
+        <p>Jeg lagde en reklameplakat i Canva og lærte hvordan man kombinerer typografi og bilder for et klart budskap.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function updateTime() {
+      const dt = new Date();
+      const dateStr = dt.toLocaleDateString('no-NO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const timeStr = dt.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById("datetime").innerHTML = `${dateStr} - ${timeStr}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>

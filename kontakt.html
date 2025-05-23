@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt - Benjamin</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    main.content {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      color: #eaeaea;
+    }
+
+    .contact-info {
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .contact-item {
+      margin-bottom: 25px;
+    }
+
+    .contact-link {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .contact-link:hover {
+      color: gold;
+      text-decoration: underline;
+    }
+
+    .map-container {
+      flex: 2;
+      border: 3px solid #445577;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      min-height: 300px;
+    }
+
+    @media (max-width: 700px) {
+      main.content {
+        flex-direction: column;
+      }
+      .map-container {
+        min-height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="rainCanvas"></canvas>
+
+  <div class="datetime" id="datetime"></div>
+
+  <nav class="side-menu">
+    <ul>
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="fag1.html">Teknologiforståelse</a></li>
+      <li><a href="fag2.html">Programmering</a></li>
+      <li><a href="fag3.html">Medie</a></li>
+      <li><a href="fag4.html">Yrkesfag</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="contact-info">
+      <h1>Kontakt</h1>
+      <p>Ta gjerne kontakt med meg via e-post eller telefon. Du kan også se hvor jeg holder til på kartet.</p>
+
+      <div class="contact-item">
+        <h3>E-post</h3>
+        <p><a href="shadefrzn@gmail.com" class="contact-link">shadefrzn@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h3>Telefon</h3>
+        <p><a href="tel:+4740061488" class="contact-link">+47 40 06 14 88</a></p>
+      </div>
+    </section>
+
+    <section class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2021.8804565695125!2d10.572834376671814!3d59.55174299319825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46414ed5e5ae79ab%3A0x10b01e0bde49cf36!2sBispeveien%203%2C%203482%20Tofte!5e0!3m2!1sno!2sno!4v1748002767521!5m2!1sno!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.556031491358!2d10.752245315714914!3d59.91386838184516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416f9f1fb13691%3A0x563a6e041b5b73ea!2sOslo%20Sentralstasjon!5e0!3m2!1sno!2sno!4v1684164147900!5m2!1sno!2sno"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function updateTime() {
+      const dt = new Date();
+      const dateStr = dt.toLocaleDateString("no-NO", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+      const timeStr = dt.toLocaleTimeString("no-NO", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      });
+      document.getElementById("datetime").innerHTML = `${dateStr} - ${timeStr}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>

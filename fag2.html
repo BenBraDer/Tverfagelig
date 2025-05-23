@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hjemmeside - Benjamin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="rainCanvas"></canvas>
+
+  <div class="datetime" id="datetime"></div>
+
+  <nav class="side-menu">
+    <ul>
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="fag1.html">Teknologiforståelse</a></li>
+      <li><a href="fag2.html">Programmering</a></li>
+      <li><a href="fag3.html">Medie</a></li>
+      <li><a href="fag4.html">Yrkesfag</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Programmering</h1>
+    <p>Her er tre programmeringsprosjekter jeg er spesielt fornøyd med:</p>
+
+    <section class="project-grid">
+      <div class="project-card">
+        <img src="bilder/kodeprosjekt1.jpg" alt="Prosjekt 1">
+        <h3>Kalkulator med JavaScript</h3>
+        <p>Jeg lagde en funksjonell kalkulator med HTML, CSS og JS. Det var gøy å få knappene til å fungere riktig!</p>
+      </div>
+      <div class="project-card">
+        <img src="bilder/kodeprosjekt2.jpg" alt="Prosjekt 2">
+        <h3>Quiz-App</h3>
+        <p>En quiz med flere spørsmål og poengsystem. Jeg lærte masse om arrays, if-setninger og events.</p>
+      </div>
+      <div class="project-card">
+        <img src="bilder/kodeprosjekt3.jpg" alt="Prosjekt 3">
+        <h3>Min første nettside</h3>
+        <p>Den aller første nettsiden jeg lagde selv fra bunnen av, og jeg ble stolt da den fungerte og så bra ut!</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function updateTime() {
+      const dt = new Date();
+      const dateStr = dt.toLocaleDateString('no-NO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const timeStr = dt.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById("datetime").innerHTML = `${dateStr} - ${timeStr}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>

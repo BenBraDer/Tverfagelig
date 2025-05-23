@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hjemmeside - Benjamin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rainCanvas"></canvas>
+
+<div class="datetime" id="datetime"></div>
+
+<nav class="side-menu">
+<ul>
+<li><a href="index.html">Hjem</a></li>
+<li><a href="fag1.html">Fag 1</a></li>
+<li><a href="fag2.html">Fag 2</a></li>
+<li><a href="fag3.html">Fag 3</a></li>
+<li><a href="fag4.html">Fag 4</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+
+<main class="content">
+<h1>Hei, jeg heter Benjamin!</h1>
+<p>Jeg er 18 år gammel og går 1IMA på videregående.</p>
+<p>Her kan du lese om hva jeg har lært dette skoleåret. Jeg har jobbet med teknologi, koding, produksjon og praksis – og har laget denne nettsiden for å vise det frem.</p>
+</main>
+
+<nav class="side-menu">
+  <ul>
+    <li><a href="index.html">Hjem</a></li>
+    <li><a href="fag1.html">Teknologiforståelse</a></li>
+    <li><a href="fag2.html">Programmering</a></li>
+    <li><a href="fag3.html">Medie</a></li>
+    <li><a href="fag4.html">Yrkesfag</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+</nav>
+
+<script src="script.js"></script>
+<script>
+function updateTime() {
+  const dt = new Date();
+  const dateStr = dt.toLocaleDateString('no-NO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const timeStr = dt.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  document.getElementById("datetime").innerHTML = `${dateStr} - ${timeStr}`;
+}
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+</body>
+</html>
